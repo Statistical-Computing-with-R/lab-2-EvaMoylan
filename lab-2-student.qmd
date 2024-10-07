@@ -4,10 +4,9 @@ author: "Eva Moylan"
 date: "10/6/24"
 format: html
 editor: source
-  markdown: 
-    wrap: 72
 embed-resources: true
 code-tools: true
+echo: true
 ---
 
 # Part 1: GitHub Workflow
@@ -258,12 +257,15 @@ We're going to use the `aov()` function to carry out an ANOVA.
 ```{r}
 #| label: anova
 
-species_mod <- aov()
+#Run an anova comparing population mean weight between rodent species
+species_mod <- aov(weight~species, data = surveys)
 
 summary(species_mod)
 ```
 
 **18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**
+
+*At least one rodent species has a different population mean weight (df = 13, F = 19916, P < 0.001).*
 
 # Lab 2 Submission
 
