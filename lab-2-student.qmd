@@ -63,6 +63,11 @@ In the code chunk below, load in the packages necessary for your analysis. You s
 
 ```{r}
 #| label: setup
+#| warning: false
+
+#Load packages
+library(tidyverse)
+library(here)
 
 ```
 
@@ -102,16 +107,23 @@ represent:
 
 ```{r}
 #| label: load-data
+#| message: false
+
+#Load in data
+surveys <- read_csv(here("data","surveys.csv"))
+
+#Preview data, did it load correctly?
+print(surveys) #yes!
 
 ```
 
 **2. What are the dimensions (# of rows and columns) of these data?**
 
-<!-- You can either write code here or in the code chunk for #1, but I **must** see the code you used to address this question!  -->
+The dimensions of these data are 30,486 rows and 15 columns.
 
 **3. What are the data types of the variables in this dataset?**
 
-<!-- You can either write code here or in the code chunk for #1, but I **must** see the code you used to address this question!  -->
+The variables and their datatypes are: 'record_id' (double), 'month' (double), 'day' (double), 'year' (double), 'plot_id' (double), 'sex' (character), 'hindfoot_length' (double), 'weight' (double), 'date' (date), day_of_week' (character), 'plot_type' (character), 'genus' (character), 'species' (character), 'taxa' (character).
 
 # Exploratory Data Analysis with **`ggplot2`**
 
